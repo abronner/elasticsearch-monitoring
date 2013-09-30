@@ -2,7 +2,7 @@ h1. elasticsearch-monitoring
 
 h2. Cluster monitoring with elasticsearch and kibana
 
-This is an elegant way to monitor your elasticsearch cluster. 
+This is an elegant way to monitor your elasticsearch cluster. See the screenshot below. 
 
 The idea is simple and straightforward:
 * get statistics via nodes stats API and index them back in elasticsearch, 
@@ -23,7 +23,7 @@ Start executing it periodically, e.g. using crontab.
 
 h4. Load kibana dashboard: 
 
-Install "http://www.elasticsearch.org/overview/kibana/installation/":kibana and load @dashboards/monitoring-dashboard.json@. 
+Install "kibana":http://www.elasticsearch.org/overview/kibana/installation and load @dashboards/monitoring-dashboard.json@. 
 
 h2. Details and Notes
 
@@ -31,8 +31,9 @@ h2. Details and Notes
 
 h2. Screenshots
 
-Two production nodes, sampling nodes stats every 5 minutes:
+Two production nodes, sampling nodes stats every 5 minutes, keeping history for 60 days:
 
 !screenshots/kibana-screenshot-1.png!
 !screenshots/kibana-screenshot-2.png!
+!screenshots/kibana-screenshot-3.png!
 
