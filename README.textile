@@ -1,5 +1,26 @@
 h1. elasticsearch-monitoring
+
 h2. Cluster monitoring with elasticsearch and kibana
+
+This repository presents an elegant way to monitor your elasticsearch cluster. 
+
+The idea is simple and straightforward:
+* get all nodes statistics with nodes stats API and index them back in elasticsearch 
+* repeat it periodically (e.g. every 5 minutes)
+* use ttl to automatically limit nodes stats history (e.g. 60 days)
+* visualize nodes statistics with kibana
 
 h2. Installing and Running
 
+h4. Create the index:
+
+Execute @scripts/elasticsearch-nodes-stats-mapping.sh@ on one of your cluster nodes.
+
+h4. Install the script:
+
+Copy @scripts/elasticsearch-nodes-stats.sh@ to one of your cluster nodes.
+Start executing it periodically (e.g. using crontab).
+
+h4. Load kibana dashboard: 
+
+Open @kibana/monitoring-dashboard.json@ in kibana. 
