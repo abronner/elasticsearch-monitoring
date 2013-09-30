@@ -24,3 +24,8 @@ Start executing it periodically (e.g. using crontab).
 h4. Load kibana dashboard: 
 
 Open @kibana/monitoring-dashboard.json@ in kibana. 
+
+Screenshots:
+!screenshots/kibana-screenshot-1.png!
+!screenshots/kibana-screenshot-2.png!
+
