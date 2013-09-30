@@ -2,13 +2,13 @@ h1. elasticsearch-monitoring
 
 h2. Cluster monitoring with elasticsearch and kibana
 
-This is an elegant way to monitor your elasticsearch cluster. See the screenshot below. 
+This is an elegant way to monitor your elasticsearch cluster. See the screenshots below. 
 
 The idea is simple and straightforward:
 * get statistics via nodes stats API and index them back in elasticsearch, 
 * repeat it periodically (e.g. every 5 minutes),
 * use ttl to automatically limit statistics history (e.g. 60 days),
-* visualize the cluster statistics with kibana.
+* visualize cluster statistics with kibana.
 
 h2. Installing and Running
 
@@ -25,13 +25,14 @@ h4. Load the Dashboard:
 
 Install "kibana":http://www.elasticsearch.org/overview/kibana/installation and load @dashboards/monitoring-dashboard.json@. 
 
+
 h2. Notes
 
-* All statistics for a single node are indexed under a single type, identified by the node's name. You should use fixed (predefined) node names, otherwise any restart of elasticsearch will generate new node names and statistics for a single node will be indexed under different types (see elasticsearch "configuration":http://www.elasticsearch.org/guide/reference/setup/configuration).
-* @scripts/elasticsearch-nodes-stats.sh@ is a python script. It uses the http libraray "requests":http://docs.python-requests.org/en/latest (if not installed: "installation":http://docs.python-requests.org/en/latest/user/install/#install). 
+* All statistics for a single node are indexed under a single type, identified by the node's name. Use fixed (predefined) node names, otherwise any restart of elasticsearch will generate new node names and statistics for a single node will be indexed under different types (see elasticsearch "configuration":http://www.elasticsearch.org/guide/reference/setup/configuration).
+* @scripts/elasticsearch-nodes-stats.sh@ is a python script. It uses the http library "requests":http://docs.python-requests.org/en/latest (if not installed: "installation":http://docs.python-requests.org/en/latest/user/install/#install). 
 * Default time to live (ttl) is 60 days. Modify it to your needs (@scripts/elasticsearch-nodes-stats-mapping.sh@). 
 * Sampling period is defined by the executor of @scripts/elasticsearch-nodes-stats.sh@. For example, a simple crontab setup for execution every 5 minutes: @*/5    *    *       *        *     <path>/elasticsearch-nodes-stats.sh@
-* There many (many) ways to visualize the data and this dashboard is only one of them. Consider creating multiple dashboards according to your needs (e.g. os monitor, jvm monitor, indices monitor, etc).
+* There are many ways to visualize the data and the given dashboard is only one of them. Consider creating multiple dashboards according to your needs (e.g. os monitor, jvm monitor, indices monitor, etc).
 
 h2. Screenshots
 
