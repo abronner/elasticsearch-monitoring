@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # this script creates an index called 'nodes_stats'
 # the index uses 1 shard and has 1 replica (change settings if needed) 
