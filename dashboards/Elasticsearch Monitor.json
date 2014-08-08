@@ -41,7 +41,7 @@
   },
   "rows": [
     {
-      "title": "os",
+      "title": "CPU",
       "height": "150px",
       "editable": true,
       "collapse": false,
@@ -212,91 +212,6 @@
               0
             ]
           },
-          "value_field": "os.mem.free_percent",
-          "auto_int": true,
-          "resolution": 100,
-          "interval": "30s",
-          "fill": 0,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
-          "bars": false,
-          "stack": false,
-          "points": false,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "title": "Free Memory %",
-          "scale": 1,
-          "y_format": "none",
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1y"
-          ],
-          "pointradius": 5,
-          "options": true,
-          "show_query": true,
-          "legend_counts": true,
-          "zerofill": true,
-          "derivative": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          }
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "process",
-      "height": "150px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 4,
-          "editable": true,
-          "group": [
-            "default"
-          ],
-          "type": "histogram",
-          "mode": "mean",
-          "time_field": "timestamp",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
           "value_field": "process.cpu.percent",
           "auto_int": true,
           "resolution": 100,
@@ -356,7 +271,325 @@
             "value_type": "cumulative",
             "query_as_alias": true
           }
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "MEMORY",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 4,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "histogram",
+          "mode": "mean",
+          "time_field": "timestamp",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "value_field": "os.mem.free_percent",
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": true,
+          "bars": false,
+          "stack": false,
+          "points": false,
+          "lines": true,
+          "legend": true,
+          "x-axis": true,
+          "y-axis": true,
+          "percentage": false,
+          "interactive": true,
+          "title": "Free Memory %",
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "pointradius": 5,
+          "options": true,
+          "show_query": true,
+          "legend_counts": true,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          }
         },
+        {
+          "span": 4,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "histogram",
+          "mode": "mean",
+          "time_field": "timestamp",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "value_field": "jvm.mem.heap_used_in_bytes",
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": true,
+          "bars": false,
+          "stack": false,
+          "points": false,
+          "lines": true,
+          "legend": true,
+          "x-axis": true,
+          "y-axis": true,
+          "percentage": false,
+          "interactive": true,
+          "title": "Heap Memory (bytes)",
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "pointradius": 5,
+          "options": true,
+          "show_query": true,
+          "legend_counts": true,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          }
+        },
+        {
+          "span": 4,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "histogram",
+          "mode": "mean",
+          "time_field": "timestamp",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "value_field": "jvm.gc.collectors.old.collection_time_in_millis",
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": true,
+          "bars": false,
+          "stack": false,
+          "points": false,
+          "lines": true,
+          "legend": true,
+          "x-axis": true,
+          "y-axis": true,
+          "percentage": false,
+          "interactive": true,
+          "title": "GC Old (ms)",
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "pointradius": 5,
+          "options": true,
+          "show_query": true,
+          "legend_counts": true,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          }
+        },
+        {
+          "span": 4,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "mean",
+          "time_field": "timestamp",
+          "value_field": "jvm.gc.collectors.young.collection_time_in_millis",
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": false,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": true,
+          "stack": true,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "GC YOUNG (MS)"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "process",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
         {
           "span": 4,
           "editable": true,
@@ -391,6 +624,81 @@
           "percentage": false,
           "interactive": true,
           "title": "Open HTTP",
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "pointradius": 5,
+          "options": true,
+          "show_query": true,
+          "legend_counts": true,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          }
+        },
+        {
+          "span": 4,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "histogram",
+          "mode": "mean",
+          "time_field": "timestamp",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "value_field": "jvm.threads.count",
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "30s",
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": true,
+          "bars": false,
+          "stack": false,
+          "points": false,
+          "lines": true,
+          "legend": true,
+          "x-axis": true,
+          "y-axis": true,
+          "percentage": false,
+          "interactive": true,
+          "title": "Number of Threads",
           "scale": 1,
           "y_format": "none",
           "grid": {
@@ -746,246 +1054,10 @@
       "notice": false
     },
     {
-      "title": "jvm",
-      "height": "150px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 4,
-          "editable": true,
-          "group": [
-            "default"
-          ],
-          "type": "histogram",
-          "mode": "mean",
-          "time_field": "timestamp",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
-          "value_field": "jvm.mem.heap_used_in_bytes",
-          "auto_int": true,
-          "resolution": 100,
-          "interval": "30s",
-          "fill": 0,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
-          "bars": false,
-          "stack": false,
-          "points": false,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "title": "Heap Memory (bytes)",
-          "scale": 1,
-          "y_format": "none",
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1y"
-          ],
-          "pointradius": 5,
-          "options": true,
-          "show_query": true,
-          "legend_counts": true,
-          "zerofill": true,
-          "derivative": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          }
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "group": [
-            "default"
-          ],
-          "type": "histogram",
-          "mode": "mean",
-          "time_field": "timestamp",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
-          "value_field": "jvm.threads.count",
-          "auto_int": true,
-          "resolution": 100,
-          "interval": "30s",
-          "fill": 0,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
-          "bars": false,
-          "stack": false,
-          "points": false,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "title": "Number of Threads",
-          "scale": 1,
-          "y_format": "none",
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1y"
-          ],
-          "pointradius": 5,
-          "options": true,
-          "show_query": true,
-          "legend_counts": true,
-          "zerofill": true,
-          "derivative": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          }
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "group": [
-            "default"
-          ],
-          "type": "histogram",
-          "mode": "mean",
-          "time_field": "timestamp",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
-          "value_field": "jvm.gc.collection_time_in_millis",
-          "auto_int": true,
-          "resolution": 100,
-          "interval": "30s",
-          "fill": 0,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
-          "bars": false,
-          "stack": false,
-          "points": false,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "title": "Garbage Collection Time (millis)",
-          "scale": 1,
-          "y_format": "none",
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1y"
-          ],
-          "pointradius": 5,
-          "options": true,
-          "show_query": true,
-          "legend_counts": true,
-          "zerofill": true,
-          "derivative": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          },
-          "error": "FacetPhaseExecutionException[Facet [0]: (value) field [jvm.gc.collection_time_in_millis] not found]"
-        }
-      ],
-      "notice": false
-    },
-    {
       "title": "data",
       "height": "500px",
       "editable": true,
-      "collapse": false,
+      "collapse": true,
       "collapsable": true,
       "panels": [
         {
