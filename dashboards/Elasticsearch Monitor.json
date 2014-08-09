@@ -392,7 +392,7 @@
           "interactive": true,
           "title": "Heap Memory (bytes)",
           "scale": 1,
-          "y_format": "none",
+          "y_format": "bytes",
           "grid": {
             "max": null,
             "min": 0
@@ -860,7 +860,7 @@
           "interactive": true,
           "title": "Filter Cache Memory (bytes)",
           "scale": 1,
-          "y_format": "none",
+          "y_format": "bytes",
           "grid": {
             "max": null,
             "min": 0
@@ -935,7 +935,7 @@
           "interactive": true,
           "title": "Field Data Memory (bytes)",
           "scale": 1,
-          "y_format": "none",
+          "y_format": "bytes",
           "grid": {
             "max": null,
             "min": 0
