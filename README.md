@@ -1,7 +1,6 @@
 # Elasticsearch Monitoring
 
 ## Cluster monitoring with elasticsearch and kibana
-
 This is and simple way to monitor your elasticsearch cluster and is a fork and enhancement on [the original by abronner](https://github.com/abronner/elasticsearch-monitoring). It assumes you already have Elasticsearch and Kibana installed.
 
 The idea is simple and straightforward:
@@ -12,13 +11,12 @@ The idea is simple and straightforward:
 4. Visualize cluster statistics with kibana.
 
 ## Installing and Running
-### Create the Index:
-Execute scripts/elasticsearch-nodesstats-mapping.sh on one of your cluster nodes.
-Install the script in cron to run at the beginning of each month.
+### Add the template:
+Execute scripts/elasticsearch-nodesstats-template.sh on one of your cluster nodes. This will create a template for all indexes that are created.
 
 ### Install the Script:
 Copy scripts/elasticsearch-nodesstats.py to one of your cluster nodes.
-Start executing it periodically, e.g. using cron.
+Start executing it periodically, e.g. using cron (below).
 
 ### Load the Dashboard:
 Load dashboards/Elasticsearch Monitoring.json into kibana.
@@ -46,5 +44,4 @@ Two production nodes, sampling nodes stats every 5 minutes, keeping history for 
 
 ## Todo
 * Split the graphs, maybe a high level page and then subpages for OS, Memory/Heap, ES specifics etc.
-* Move the index creation script to an uploaded mapping.
 * Should this be a plugin instead?
