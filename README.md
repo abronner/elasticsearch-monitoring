@@ -36,10 +36,6 @@ Two production nodes, sampling nodes stats every 5 minutes, keeping history for 
 ````
 */5    *    *       *        *     <path>/elasticsearch-nodes-stats.py
 ````
-* scripts/elasticsearch-nodes-stats.sh needs to run at the beginning of each new day to create the index for that month, eg with cron;
-````
-0    0    *       *        *     <path>/elasticsearch-nodes-stats-mapping.sh
-````
 * There are many ways to visualize the data and the provided dashboard is only one of them. Consider creating multiple dashboards according to your needs (e.g. os monitor, jvm monitor, indices monitor, etc).
 
 ## Todo
