@@ -1,26 +1,17 @@
 #!/bin/bash
 
-# This script creates an index called 'nodes_stats_YYYYMMDD'
-# The index uses 8 shards and has 1 replica (change settings if needed).
-# The default mapping defines the following:
-# - fields called '*timestamp' are indexed as dates
-# - string fields are not analyzed
+# Creates the mapping for any and all new indexes
 
-# This originally used document ttl which isn't efficient. Instead
-# the nodes_stats alias is moved monthly and old indexes can then be manually deleted
-
-TODAY=`date +%Y.%m.%d`
-
-# Create new month's index
-function createTodaysIndex() {
-curl -XPUT "http://localhost:9200/nodesstats-${TODAY}" -d "
+curl -XPUT "http://localhost:9200/_template/nodesstats" -d "
 {
+    \"order\" : 0,
+    \"template\": \"nodesstats-*\",
     \"settings\" : {
-        \"number_of_shards\" : 8,
+        \"number_of_shards\" : 3,
         \"number_of_replicas\" : 1
     },
     \"mappings\" : {
-        \"_default_\" : {
+        \"node_stats\" : {
             \"_all\" : {\"enabled\" : false},
             \"dynamic_templates\" : [
             {
@@ -46,7 +37,3 @@ curl -XPUT "http://localhost:9200/nodesstats-${TODAY}" -d "
         }
     }
 }"
-}
-
-# Now run
-createTodaysIndex
